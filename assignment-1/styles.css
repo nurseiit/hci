@@ -109,11 +109,15 @@ td:last-of-type {
 th,
 td {
   text-align: start;
-  padding: 10px;
+  padding: 12px;
 }
 
 td {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+tr:last-of-type td {
+  border: none;
 }
 
 .hotel:last-of-type {
