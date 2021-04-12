@@ -1,0 +1,50 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+:root {
+  --bg-1: #f3f4f6;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-1);
+}
+
+a,
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: blue;
+}
+
+.hotels {
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.hotel {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.hotel:last-of-type {
+  margin-bottom: 0;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script>
+      const hotels = [
+        {
+          name: "Seoul Inn",
+          desc: "Explore lorem ipsum.",
+          link: "https://dvnr.me/about",
+        },
+        {
+          name: "Dubai was Liiiiiiit",
+          desc: "My boy Rocco and camels. Billions of str*****s maaan.",
+          link: "https://dvnr.me/about",
+        },
+      ];
+
+      // defer until vue is available
+      window.addEventListener("DOMContentLoaded", function () {
+        const app = new Vue({
+          el: "#hotels",
+          data: {
+            hotels: hotels,
+          },
+        });
+      });
+    </script>
+    <title></title>
+  </head>
+  <body>
+    <div id="hotels" class="hotels">
+      <a
+        class="hotel"
+        v-for="hotel,index in hotels"
+        :key="index"
+        :href="hotel.link"
+      >
+        <h3>{{hotel.name}}</h3>
+        <p>{{hotel.desc}}</p>
+      </a>
+    </div>
+  </body>
+</html>
