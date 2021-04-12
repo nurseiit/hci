@@ -40,9 +40,9 @@ a:hover {
   padding: 16px;
 }
 
-.hotel {
-  display: block;
-  margin-bottom: 20px;
+th,
+td {
+  padding: 10px;
 }
 
 .hotel:last-of-type {

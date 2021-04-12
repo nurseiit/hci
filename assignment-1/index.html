@@ -39,15 +39,19 @@
   </head>
   <body>
     <div id="hotels" class="hotels">
-      <a
-        class="hotel"
-        v-for="hotel,index in hotels"
-        :key="index"
-        :href="hotel.link"
-      >
-        <h3>{{hotel.name}}</h3>
-        <p>{{hotel.desc}}</p>
-      </a>
+      <table>
+        <tr>
+          <th>Region</th>
+          <th>Name</th>
+          <th>Link</th>
+        </tr>
+
+        <tr class="hotel" v-for="hotel,index in hotels" :key="index">
+          <td>{{hotel.name}}</td>
+          <td>{{hotel.desc}}</td>
+          <td><a :href="hotel.link">link</a></td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
