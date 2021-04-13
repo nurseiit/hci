@@ -14,19 +14,34 @@
     <script>
       const hotels = [
         {
-          name: "Seoul Inn",
-          desc: "Explore lorem ipsum.",
+          name: "Seoul",
+          desc: "Trump Hotel.",
           link: "https://dvnr.me/about",
+          color: "#B10F2E",
         },
         {
-          name: "Dubai was Liiiit",
-          desc: "My boy Rocco and camels.",
+          name: "Dubai",
+          desc: "Ramada Inn.",
           link: "https://dvnr.me/about",
+          color: "#8F3985",
         },
         {
           name: "Shymkent",
-          desc: "Billions of str*****s maaan.",
+          desc: "Rixos Khadisha.",
           link: "https://dvnr.me/about",
+          color: "#197278",
+        },
+        {
+          name: "Almaty",
+          desc: "The Ritz Carlton.",
+          link: "https://dvnr.me/about",
+          color: "#07BEB8",
+        },
+        {
+          name: "Astana",
+          desc: "Hilton Astana.",
+          link: "https://dvnr.me/about",
+          color: "#120D31",
         },
       ];
 
@@ -43,11 +58,8 @@
               if (this.searchText.length > 0) {
                 const query = this.searchText.toLowerCase();
                 return this.hotels.filter(
-                  ({ name, desc, link }) =>
-                    [name, desc, link]
-                      .join(" ")
-                      .toLowerCase()
-                      .indexOf(query) !== -1
+                  ({ name, desc }) =>
+                    [name, desc].join(" ").toLowerCase().indexOf(query) !== -1
                 );
               }
               return this.hotels;
@@ -56,7 +68,7 @@
         });
       });
     </script>
-    <title></title>
+    <title>(20172001) Nurseiit Abdimomyn</title>
   </head>
   <body>
     <h1>
@@ -64,7 +76,11 @@
     </h1>
     <div id="hotels" class="hotels">
       <div class="input-wrapper">
-        <input v-model.trim="searchText" placeholder="Search for hotels" />
+        <input
+          v-model.trim="searchText"
+          placeholder="Search for hotels by Name, Region"
+        />
+        <button><span class="inner-button">+ Import hotel</span></button>
         <svg
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -93,9 +109,9 @@
         </tr>
 
         <tr class="hotel" v-for="hotel,index in filteredHotels" :key="index">
-          <td>{{hotel.name}}</td>
+          <td :style="'color: ' + hotel.color">{{hotel.name}}</td>
           <td>{{hotel.desc}}</td>
-          <td><a :href="hotel.link">link</a></td>
+          <td><a :href="hotel.link">view</a></td>
         </tr>
       </table>
     </div>
